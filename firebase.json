@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "nuvio-d2ed6",
     "public": "out",
     "cleanUrls": true,
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
