@@ -52,9 +52,14 @@ const ro = {
   about: {
     title: 'Despre noi',
     subtitle: 'Povestea din spatele cabanei NUVIO',
-    p1: 'NUVIO s-a născut din dorința de a oferi oaspeților un loc autentic, în care natura este în centrul atenției.',
-    p2: 'Am grijă de fiecare detaliu, pentru ca sejurul tău să fie confortabil, sigur și plăcut, indiferent de anotimp.',
-    p3: 'Rezervările se fac telefonic. Ne bucurăm să-ți răspundem la orice întrebare înainte de sosire.',
+    paragraphs: [
+      'NUVIO începe cu o priveliște.',
+      'În Măguri, în Munții Apuseni, construim o cabană cu ferestre mari, deschise către dealuri și cer. Ne place gândul că peisajul va face parte din fiecare zi petrecută aici. Din cafeaua de dimineață, dintr-o după-amiază cu jocuri în living, din momentele în care cineva întrerupe conversația cu un simplu „uite afară”.',
+      'NUVIO prinde contur cu familiile și prietenii în minte. Cu copii care au mereu ceva de descoperit, cu mese la care mai rămâne lumea la povești și cu dimineți în care fiecare își găsește ritmul.',
+      'Ne imaginăm lucrurile mici pe care le vei ține minte după plecare. Locul preferat lângă geam. Un nor urmărit de copii până dispare după deal. Lumina care schimbă camera spre seară. O conversație care a avut, în sfârșit, timp.',
+      'Numele NUVIO este creat din asocierea dintre cer, lumină și priveliște. Îi dăm sens prin casa pe care o construim și prin felul în care ne dorim să te simți aici.',
+      'La NUVIO, priveliștea se împarte cu ai tăi.',
+    ],
   },
   tariffs: {
     title: 'Tarife',
@@ -134,9 +139,11 @@ const en: Dict = {
   about: {
     title: 'About Us',
     subtitle: 'The story behind the NUVIO cabin',
-    p1: 'NUVIO was born from the wish to offer guests an authentic place where nature takes centre stage.',
-    p2: 'We take care of every detail so your stay is comfortable, safe and pleasant in any season.',
-    p3: 'Bookings are made by phone. We are happy to answer any question before you arrive.',
+    paragraphs: [
+      'NUVIO was born from the wish to offer guests an authentic place where nature takes centre stage.',
+      'We take care of every detail so your stay is comfortable, safe and pleasant in any season.',
+      'Bookings are made by phone. We are happy to answer any question before you arrive.',
+    ],
   },
   tariffs: {
     title: 'Tariffs',
@@ -214,9 +221,11 @@ const hu: Dict = {
   about: {
     title: 'Rólunk',
     subtitle: 'A NUVIO faház története',
-    p1: 'A NUVIO abból a vágyból született, hogy egy autentikus helyet kínáljunk, ahol a természet áll a középpontban.',
-    p2: 'Minden részletre odafigyelünk, hogy tartózkodása kényelmes, biztonságos és kellemes legyen minden évszakban.',
-    p3: 'A foglalás telefonon történik. Szívesen válaszolunk minden kérdésre érkezés előtt.',
+    paragraphs: [
+      'A NUVIO abból a vágyból született, hogy egy autentikus helyet kínáljunk, ahol a természet áll a középpontban.',
+      'Minden részletre odafigyelünk, hogy tartózkodása kényelmes, biztonságos és kellemes legyen minden évszakban.',
+      'A foglalás telefonon történik. Szívesen válaszolunk minden kérdésre érkezés előtt.',
+    ],
   },
   tariffs: {
     title: 'Árak',
