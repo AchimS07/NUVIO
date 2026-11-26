@@ -1,0 +1,11 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Public read for site content; owner edits via Firebase Console only.
+    match /site/{docId} {
+      allow read: if true;
+      allow write: if false;
+    }
+  }
+}
