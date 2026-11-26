@@ -1,0 +1,11 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Public read for cabin photos; uploads only through the Firebase Console.
+    match /cabin-photos/{fileName} {
+      allow read: if true;
+      allow write: if false;
+    }
+  }
+}
