@@ -140,9 +140,12 @@ const en: Dict = {
     title: 'About Us',
     subtitle: 'The story behind the NUVIO cabin',
     paragraphs: [
-      'NUVIO was born from the wish to offer guests an authentic place where nature takes centre stage.',
-      'We take care of every detail so your stay is comfortable, safe and pleasant in any season.',
-      'Bookings are made by phone. We are happy to answer any question before you arrive.',
+      'NUVIO begins with a view.',
+      'In Măguri, in the Apuseni Mountains, we are building a cabin with large windows that open onto the hills and the sky. We like the thought that the landscape will be part of every day spent here. From the morning coffee, from an afternoon of games in the living room, from the moments when someone interrupts a conversation with a simple "look outside".',
+      'NUVIO takes shape with families and friends in mind. With children who always have something new to discover, with meals where people linger over stories, and with mornings in which everyone finds their own rhythm.',
+      'We imagine the small things you will remember after you leave. Your favourite spot by the window. A cloud the children follow until it disappears behind the hill. The light that changes the room towards evening. A conversation that finally had time.',
+      'The name NUVIO comes from the combination of sky, light and view. We give it meaning through the house we are building and through the way we want you to feel here.',
+      'At NUVIO, the view is shared with your loved ones.',
     ],
   },
   tariffs: {
@@ -222,9 +225,12 @@ const hu: Dict = {
     title: 'Rólunk',
     subtitle: 'A NUVIO faház története',
     paragraphs: [
-      'A NUVIO abból a vágyból született, hogy egy autentikus helyet kínáljunk, ahol a természet áll a középpontban.',
-      'Minden részletre odafigyelünk, hogy tartózkodása kényelmes, biztonságos és kellemes legyen minden évszakban.',
-      'A foglalás telefonon történik. Szívesen válaszolunk minden kérdésre érkezés előtt.',
+      'A NUVIO egy kilátással kezdődik.',
+      'Măguriban, a Bihari-hegységben egy olyan kabint építünk, amelynek nagy ablakai a dombok és az égbolt felé nyílnak. Szeretjük azt a gondolatot, hogy a táj része lesz minden itt töltött napnak. A reggeli kávétól, egy nappali társasjátékos délutánjától addig a pillanatig, amikor valaki egy egyszerű „nézz ki!” szóval megszakítja a beszélgetést.',
+      'A NUVIO a családokat és a barátokat tartva szem előtt formálódik. Olyan gyerekekkel, akiknek mindig van mit felfedezniük, olyan asztaloknál, ahol az emberek szívesen maradnak a történetek mellett, és olyan reggelekkel, amikor mindenki megtalálja a maga ritmusát.',
+      'Elképzeljük azokat az apró dolgokat, amelyekre a távozásod után is emlékezni fogsz. A kedvenc hely az ablak mellett. Egy felhő, amelyet a gyerekek addig követnek, míg el nem tűnik a domb mögött. Az estébe hajló fény, amely átformálja a szobát. Egy beszélgetés, amelynek végre jutott idő.',
+      'A NUVIO név az ég, a fény és a kilátás összekapcsolásából született. A jelentést az épített házon keresztül adjuk neki, és azon keresztül, ahogyan szeretnénk, hogy itt jól érezd magad.',
+      'A NUVIO-ban a kilátást a szeretteiddel osztod meg.',
     ],
   },
   tariffs: {
