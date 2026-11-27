@@ -11,6 +11,7 @@ export type Season = {
 
 export type SiteContent = {
   phone: string;
+  email: string;
   address: string;
   // Latitude,longitude used for the map embed and directions link.
   mapQuery: string;
@@ -20,6 +21,7 @@ export type SiteContent = {
 // Placeholder values: edit in Firestore (site/content) once the real data is known.
 export const DEFAULT_CONTENT: SiteContent = {
   phone: '+40 742 939 838',
+  email: 'sebastian.achim@icloud.com',
   address: 'Sat Măguri, județul Cluj',
   mapQuery: '46.628171,23.127336',
   seasons: [
@@ -65,6 +67,7 @@ export function mergeContent(data: Record<string, unknown>): SiteContent {
   const seasons = Array.isArray(data.seasons) ? (data.seasons as Season[]) : DEFAULT_CONTENT.seasons;
   return {
     phone: typeof data.phone === 'string' ? data.phone : DEFAULT_CONTENT.phone,
+    email: typeof data.email === 'string' ? data.email : DEFAULT_CONTENT.email,
     address: typeof data.address === 'string' ? data.address : DEFAULT_CONTENT.address,
     mapQuery: typeof data.mapQuery === 'string' ? data.mapQuery : DEFAULT_CONTENT.mapQuery,
     seasons,

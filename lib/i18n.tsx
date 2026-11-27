@@ -101,6 +101,12 @@ const ro = {
   },
   footer: {
     tagline: 'Cabană de închiriat în munte. Rezervări telefonic.',
+    terms: 'Termeni și condiții',
+    cookies: 'Politica cookies',
+    cancellation: 'Politica de anulare',
+    payment: 'Cum plătesc',
+    dispute: 'Soluționarea alternativă a litigiilor',
+    comingSoon: 'Textul acestei pagini va fi adăugat în curând.',
   },
 };
 
@@ -191,6 +197,12 @@ const en: Dict = {
   },
   footer: {
     tagline: 'Mountain cabin for rent. Bookings by phone.',
+    terms: 'Terms and conditions',
+    cookies: 'Cookie policy',
+    cancellation: 'Cancellation policy',
+    payment: 'How to pay',
+    dispute: 'Alternative dispute resolution',
+    comingSoon: 'The text of this page will be added soon.',
   },
 };
 
@@ -279,6 +291,12 @@ const hu: Dict = {
   },
   footer: {
     tagline: 'Hegyi faház kiadó. Foglalás telefonon.',
+    terms: 'Általános szerződési feltételek',
+    cookies: 'Sütikezelési szabályzat',
+    cancellation: 'Lemondási szabályzat',
+    payment: 'Fizetési módok',
+    dispute: 'Alternatív vitarendezés',
+    comingSoon: 'Az oldal szövege hamarosan elkészül.',
   },
 };
 
