@@ -415,6 +415,10 @@ main {
   object-fit: cover;
 }
 
+.overview-photo {
+  aspect-ratio: 16 / 9;
+}
+
 .scene-banner {
   max-width: 720px;
   margin: 0 auto;
@@ -437,6 +441,11 @@ main {
   height: 2px;
   margin: 16px auto 0;
   background: var(--accent);
+}
+
+.section-title-word {
+  display: inline-block;
+  will-change: transform, opacity;
 }
 
 .section-lead {
