@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import CabinIllustration from '@/components/CabinIllustration';
+import PhotoSlider from '@/components/PhotoSlider';
 import Reveal from '@/components/Reveal';
 import { useI18n } from '@/lib/i18n';
 import { phoneHref } from '@/lib/content';
@@ -10,7 +11,20 @@ import { useSiteData } from '@/lib/useSiteData';
 
 export default function HomePage() {
   const { t } = useI18n();
-  const { content, images } = useSiteData();
+  const { content, images, photos } = useSiteData();
+
+  // Intro slideshow: the intro image first (if uploaded), then the cabin gallery photos.
+  const introSlides =
+    images.intro || photos.length > 0
+      ? [
+          ...(images.intro ? [images.intro] : []),
+          ...photos,
+        ].map((src, index) => (
+          // Photos come from Firebase Storage, so plain img is used for static export.
+          // eslint-disable-next-line @next/next/no-img-element
+          <img key={`${index}-${src}`} className="scene-photo" src={src} alt="NUVIO" />
+        ))
+      : [<CabinIllustration key="illustration" variant="day" />];
 
   return (
     <>
@@ -71,17 +85,13 @@ export default function HomePage() {
 
       <section className="section container">
         <Reveal>
-          <h2>{t.home.introTitle}</h2>
-          <p className="lead">{t.home.introBody}</p>
+          <h2 className="section-title">{t.home.introTitle}</h2>
+          <p className="lead section-lead">{t.home.introBody}</p>
         </Reveal>
         <Reveal className="scene-banner">
-          {images.intro ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img className="scene-photo" src={images.intro} alt="NUVIO" />
-          ) : (
-            <CabinIllustration variant="day" />
-          )}
+          <PhotoSlider slides={introSlides} />
         </Reveal>
+
         <div className="grid-3">
           {t.home.highlights.map((item, index) => (
             <Reveal key={item.title} delay={index * 0.1} className="card">
@@ -95,7 +105,7 @@ export default function HomePage() {
       <section className="section cta-band">
         <div className="container">
           <Reveal>
-            <h2>{t.home.ctaTitle}</h2>
+            <h2 className="section-title">{t.home.ctaTitle}</h2>
             <p>{t.home.ctaBody}</p>
             <a className="btn btn-light" href={phoneHref(content.phone)}>
               {content.phone}

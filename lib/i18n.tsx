@@ -25,6 +25,10 @@ const ro = {
     rights: 'Toate drepturile rezervate.',
     directions: 'Indicații de drum',
     perNight: 'RON / noapte',
+    whatsapp: 'Scrie-ne pe WhatsApp',
+    previousSlide: 'Imaginea anterioară',
+    nextSlide: 'Imaginea următoare',
+    slideLabel: 'Imaginea',
   },
   nav: {
     home: 'Acasă',
@@ -51,7 +55,6 @@ const ro = {
   },
   about: {
     title: 'Despre noi',
-    subtitle: 'Povestea din spatele cabanei NUVIO',
     paragraphs: [
       'NUVIO începe cu o priveliște.',
       'În Măguri, în Munții Apuseni, construim o cabană cu ferestre mari, deschise către dealuri și cer. Ne place gândul că peisajul va face parte din fiecare zi petrecută aici. Din cafeaua de dimineață, dintr-o după-amiază cu jocuri în living, din momentele în care cineva întrerupe conversația cu un simplu „uite afară”.',
@@ -112,6 +115,10 @@ const en: Dict = {
     rights: 'All rights reserved.',
     directions: 'Get directions',
     perNight: 'RON / night',
+    whatsapp: 'Message us on WhatsApp',
+    previousSlide: 'Previous photo',
+    nextSlide: 'Next photo',
+    slideLabel: 'Photo',
   },
   nav: {
     home: 'Home',
@@ -138,7 +145,6 @@ const en: Dict = {
   },
   about: {
     title: 'About Us',
-    subtitle: 'The story behind the NUVIO cabin',
     paragraphs: [
       'NUVIO begins with a view.',
       'In Măguri, in the Apuseni Mountains, we are building a cabin with large windows that open onto the hills and the sky. We like the thought that the landscape will be part of every day spent here. From the morning coffee, from an afternoon of games in the living room, from the moments when someone interrupts a conversation with a simple "look outside".',
@@ -197,6 +203,10 @@ const hu: Dict = {
     rights: 'Minden jog fenntartva.',
     directions: 'Útvonaltervezés',
     perNight: 'RON / éjszaka',
+    whatsapp: 'Írj nekünk WhatsApp-on',
+    previousSlide: 'Előző kép',
+    nextSlide: 'Következő kép',
+    slideLabel: 'Kép',
   },
   nav: {
     home: 'Főoldal',
@@ -223,7 +233,6 @@ const hu: Dict = {
   },
   about: {
     title: 'Rólunk',
-    subtitle: 'A NUVIO faház története',
     paragraphs: [
       'A NUVIO egy kilátással kezdődik.',
       'Măguriban, a Bihari-hegységben egy olyan kabint építünk, amelynek nagy ablakai a dombok és az égbolt felé nyílnak. Szeretjük azt a gondolatot, hogy a táj része lesz minden itt töltött napnak. A reggeli kávétól, egy nappali társasjátékos délutánjától addig a pillanatig, amikor valaki egy egyszerű „nézz ki!” szóval megszakítja a beszélgetést.',
