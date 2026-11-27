@@ -19,6 +19,7 @@ const STORAGE_KEY = 'nuvio-locale';
 const ro = {
   common: {
     callToBook: 'Rezervă telefonic',
+    bookNow: 'Rezervă acum',
     openMenu: 'Deschide meniul',
     closeMenu: 'Închide meniul',
     language: 'Limba',
@@ -38,7 +39,6 @@ const ro = {
     contact: 'Contact',
   },
   home: {
-    eyebrow: 'Cabană de munte',
     heroTitle: 'NUVIO',
     heroSubtitle: 'Liniște, aer curat și priveliști de munte. Un refugiu pentru weekend sau vacanță.',
     seeTariffs: 'Vezi tarifele',
@@ -109,6 +109,7 @@ type Dict = typeof ro;
 const en: Dict = {
   common: {
     callToBook: 'Book by phone',
+    bookNow: 'Book now',
     openMenu: 'Open menu',
     closeMenu: 'Close menu',
     language: 'Language',
@@ -128,7 +129,6 @@ const en: Dict = {
     contact: 'Contact',
   },
   home: {
-    eyebrow: 'Mountain cabin',
     heroTitle: 'NUVIO',
     heroSubtitle: 'Quiet, fresh air and mountain views. A retreat for a weekend or a holiday.',
     seeTariffs: 'See tariffs',
@@ -197,6 +197,7 @@ const en: Dict = {
 const hu: Dict = {
   common: {
     callToBook: 'Foglalás telefonon',
+    bookNow: 'Foglalj most',
     openMenu: 'Menü megnyitása',
     closeMenu: 'Menü bezárása',
     language: 'Nyelv',
@@ -216,7 +217,6 @@ const hu: Dict = {
     contact: 'Kapcsolat',
   },
   home: {
-    eyebrow: 'Hegyi faház',
     heroTitle: 'NUVIO',
     heroSubtitle: 'Csend, friss levegő és hegyi panoráma. Menedék hétvégére vagy nyaralásra.',
     seeTariffs: 'Árak megtekintése',

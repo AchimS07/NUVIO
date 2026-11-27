@@ -321,13 +321,44 @@ main {
 /* Hero */
 .hero {
   position: relative;
-  min-height: calc(92vh - var(--header-h));
+  min-height: 560px;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   color: #fff;
   overflow: hidden;
   background: var(--forest);
   isolation: isolate;
+}
+
+.hero-slides {
+  position: absolute;
+  inset: -20% 0 0;
+  z-index: -1;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-slide > * {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-slide .scene-photo {
+  aspect-ratio: auto;
+  border-radius: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(180deg, rgba(10, 20, 16, 0.45) 0%, rgba(10, 20, 16, 0.2) 40%, rgba(10, 20, 16, 0.65) 100%);
 }
 
 .hero-bg {
@@ -351,24 +382,24 @@ main {
 }
 
 .hero-inner {
-  display: grid;
-  gap: 32px;
+  position: relative;
+  z-index: 1;
+  display: flex;
   align-items: center;
-  padding-top: 40px;
-  padding-bottom: 60px;
+  justify-content: center;
+  min-height: inherit;
+  padding-top: calc(var(--header-h) + 24px);
+  padding-bottom: 80px;
+  text-align: center;
 }
 
-@media (min-width: 1024px) {
-  .hero-inner {
-    grid-template-columns: 1fr 1.1fr;
-    gap: 56px;
-  }
+.hero-text {
+  max-width: 760px;
 }
 
-.hero-visual {
-  width: 100%;
-  max-width: 640px;
-  margin: 0 auto;
+.hero-slide .cabin-svg {
+  height: 100%;
+  border-radius: 0;
 }
 
 .cabin-svg,
@@ -386,7 +417,9 @@ main {
 
 .scene-banner {
   max-width: 720px;
-  margin: 32px auto 0;
+  margin: 0 auto;
+  padding: 32px 0;
+  overflow: hidden;
 }
 
 .section-title {
@@ -531,6 +564,16 @@ main {
 
 .hero h1 {
   color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  line-height: 1.25;
+}
+
+.hero .lead {
+  color: rgba(255, 255, 255, 0.88);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .eyebrow {
@@ -544,6 +587,7 @@ main {
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
   margin-top: 28px;
 }
