@@ -9,33 +9,43 @@ type Props = {
   interval?: number;
 };
 
-// Crossfades through the slides and advances automatically.
+const EASE = [0.22, 1, 0.36, 1] as const;
+
+// Slides horizontally through the slides and advances automatically.
 export default function PhotoSlider({ slides, interval = 5000 }: Props) {
   const { t } = useI18n();
-  const [index, setIndex] = useState(0);
+  const [state, setState] = useState({ index: 0, dir: 1 });
   const count = slides.length;
-  const current = count > 0 ? index % count : 0;
+  const current = count > 0 ? state.index % count : 0;
 
   useEffect(() => {
     if (count < 2) return;
-    const id = window.setInterval(() => setIndex((i) => (i + 1) % count), interval);
+    const id = window.setInterval(() => setState((s) => ({ index: (s.index + 1) % count, dir: 1 })), interval);
     return () => window.clearInterval(id);
-  }, [count, interval, index]);
+  }, [count, interval, state.index]);
 
   if (count === 0) return null;
 
-  const go = (step: number) => setIndex((current + step + count) % count);
+  const go = (step: number) =>
+    setState((s) => ({ index: (s.index + step + count) % count, dir: step > 0 ? 1 : -1 }));
+  const goTo = (target: number) => setState((s) => ({ index: target, dir: target > s.index ? 1 : -1 }));
 
   return (
     <div className="slider">
-      <AnimatePresence initial={false} mode="sync">
+      <AnimatePresence initial={false} mode="sync" custom={state.dir}>
         <motion.div
           key={current}
           className="slider-slide"
-          initial={{ opacity: 0, scale: 1.04 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          custom={state.dir}
+          variants={{
+            enter: (dir: number) => ({ x: dir > 0 ? '100%' : '-100%', opacity: 0 }),
+            center: { x: '0%', opacity: 1 },
+            exit: (dir: number) => ({ x: dir > 0 ? '-100%' : '100%', opacity: 0 }),
+          }}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={{ duration: 0.8, ease: EASE }}
         >
           {slides[current]}
         </motion.div>
@@ -55,7 +65,7 @@ export default function PhotoSlider({ slides, interval = 5000 }: Props) {
                 key={dot}
                 type="button"
                 className={dot === current ? 'active' : undefined}
-                onClick={() => setIndex(dot)}
+                onClick={() => goTo(dot)}
                 aria-label={`${t.common.slideLabel} ${dot + 1}`}
                 aria-current={dot === current}
               />

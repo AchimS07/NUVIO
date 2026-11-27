@@ -65,7 +65,7 @@ export default function CabinIllustration({ variant = 'dusk' }: { variant?: Vari
   const gradientId = `sky-${variant}`;
 
   return (
-    <svg className="cabin-svg" viewBox="0 0 800 560" aria-hidden="true" focusable="false">
+    <svg className="cabin-svg" viewBox="0 0 800 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
       <defs>
         <linearGradient id={gradientId} x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stopColor={c.skyTop} />
