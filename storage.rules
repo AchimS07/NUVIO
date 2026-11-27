@@ -7,5 +7,10 @@ service firebase.storage {
       allow read: if true;
       allow write: if false;
     }
+    // Landing page images (hero.<ext>, intro.<ext>); fall back to illustrations when missing.
+    match /site-images/{fileName} {
+      allow read: if true;
+      allow write: if false;
+    }
   }
 }

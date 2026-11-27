@@ -10,7 +10,7 @@ import { useSiteData } from '@/lib/useSiteData';
 
 export default function HomePage() {
   const { t } = useI18n();
-  const { content } = useSiteData();
+  const { content, images } = useSiteData();
 
   return (
     <>
@@ -57,7 +57,13 @@ export default function HomePage() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, delay: 0.3 }}
           >
-            <CabinIllustration variant="dusk" />
+            {images.hero ? (
+              // Photos come from Firebase Storage, so plain img is used for static export.
+              // eslint-disable-next-line @next/next/no-img-element
+              <img className="scene-photo" src={images.hero} alt="NUVIO" />
+            ) : (
+              <CabinIllustration variant="dusk" />
+            )}
           </motion.div>
         </div>
         <div className="scroll-hint" aria-hidden="true" />
@@ -69,7 +75,12 @@ export default function HomePage() {
           <p className="lead">{t.home.introBody}</p>
         </Reveal>
         <Reveal className="scene-banner">
-          <CabinIllustration variant="day" />
+          {images.intro ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img className="scene-photo" src={images.intro} alt="NUVIO" />
+          ) : (
+            <CabinIllustration variant="day" />
+          )}
         </Reveal>
         <div className="grid-3">
           {t.home.highlights.map((item, index) => (

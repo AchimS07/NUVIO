@@ -16,7 +16,8 @@ Fără variabilele Firebase, site-ul folosește conținutul implicit (placeholde
 ## Conținut (Firebase)
 
 - Document Firestore `site/content` cu câmpurile: `phone`, `address`, `mapQuery` (`lat,lng`), `seasons` (listă de `{ id, label: { ro, en, hu }, weekday, weekend }`).
-- Fotografii: Firebase Storage, folderul `cabin-photos/`.
+- Galeria de fotografii: Firebase Storage, folderul `cabin-photos/` (orice număr de fișiere).
+- Imaginile de pe pagina principală: Firebase Storage, folderul `site-images/`. Încarcă un fișier numit `hero.jpg` (sau `.png`/`.webp`) pentru imaginea din secțiunea de sus și `intro.jpg` pentru banerul de sub introducere. Dacă lipsesc, se afișează ilustrațiile implicite. Pentru a schimba o imagine, șterge fișierul vechi și încarcă noul fișier cu același nume (`hero` sau `intro`).
 - Textele statice (pagini, facilități, meniu) sunt în `lib/i18n.tsx`.
 
 ## Deploy (Firebase Hosting, plan Spark)

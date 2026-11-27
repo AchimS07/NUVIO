@@ -330,11 +330,17 @@ main {
   margin: 0 auto;
 }
 
-.cabin-svg {
+.cabin-svg,
+.scene-photo {
   display: block;
   width: 100%;
   height: auto;
   border-radius: 16px;
+}
+
+.scene-photo {
+  aspect-ratio: 800 / 560;
+  object-fit: cover;
 }
 
 .scene-banner {
