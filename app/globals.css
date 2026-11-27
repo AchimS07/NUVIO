@@ -333,7 +333,7 @@ main {
 
 .hero-slides {
   position: absolute;
-  inset: -20% 0 0;
+  inset: -4% 0 0;
   z-index: -1;
 }
 
@@ -351,6 +351,7 @@ main {
 
 .hero-slide .scene-photo {
   aspect-ratio: auto;
+  height: 100%;
   border-radius: 0;
 }
 
@@ -413,10 +414,6 @@ main {
 .scene-photo {
   aspect-ratio: 800 / 560;
   object-fit: cover;
-}
-
-.overview-photo {
-  aspect-ratio: 16 / 9;
 }
 
 .scene-banner {

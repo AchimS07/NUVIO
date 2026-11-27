@@ -17,8 +17,8 @@ export default function HeroBackground({ slides, interval = 6000, children }: Pr
   const current = count > 0 ? state.index % count : 0;
 
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
-  // The slides box starts 20% above the hero; the drift stays inside that margin so no edge shows.
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '14%']);
+  // The slides box starts 4% above the hero; the drift stays inside that margin so no edge shows.
+  const y = useTransform(scrollYProgress, [0, 1], ['0%', '4%']);
 
   useEffect(() => {
     if (count < 2) return;

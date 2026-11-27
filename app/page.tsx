@@ -46,17 +46,11 @@ export default function HomePage() {
   const { t } = useI18n();
   const { content, images, photos } = useSiteData();
 
-  // Hero background: the hero image first (if uploaded), then the cabin gallery photos.
-  const heroSlides =
-    images.hero || photos.length > 0
-      ? [
-          ...(images.hero ? [images.hero] : []),
-          ...photos,
-        ].map((src, index) => (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img key={`${index}-${src}`} className="scene-photo" src={src} alt="NUVIO" />
-        ))
-      : [<CabinIllustration key="illustration" variant="dusk" />];
+  // Hero background: the hero image first (uploaded, or the bundled photo), then the cabin gallery photos.
+  const heroSlides = [images.hero ?? '/images/hero.jpg', ...photos].map((src, index) => (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img key={`${index}-${src}`} className="scene-photo" src={src} alt="NUVIO" />
+  ));
 
   // Intro slideshow: the intro image first (if uploaded), then the cabin gallery photos.
   const introSlides =
@@ -112,12 +106,6 @@ export default function HomePage() {
         </Reveal>
         <ParallaxReveal className="scene-banner">
           <PhotoSlider slides={introSlides} />
-        </ParallaxReveal>
-
-        <ParallaxReveal className="scene-banner overview-banner">
-          {/* Uploaded to Firebase Storage as overview.<ext> this replaces the bundled fallback. */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="scene-photo overview-photo" src={images.overview ?? '/images/overview.jpg'} alt="NUVIO" />
         </ParallaxReveal>
 
         <div className="grid-3">
