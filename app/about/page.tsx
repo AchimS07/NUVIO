@@ -16,9 +16,11 @@ export default function AboutPage() {
       </header>
       <section className="section" style={{ paddingTop: 16 }}>
         <Reveal>
-          <p className="lead">{t.about.p1}</p>
-          <p>{t.about.p2}</p>
-          <p>{t.about.p3}</p>
+          {t.about.paragraphs.map((text, i) => (
+            <p key={i} className={i === 0 ? 'lead' : undefined}>
+              {text}
+            </p>
+          ))}
         </Reveal>
       </section>
     </div>
