@@ -1,7 +1,8 @@
 'use client';
 
+import { Fragment, useRef } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import CabinIllustration from '@/components/CabinIllustration';
 import HeroBackground from '@/components/HeroBackground';
 import ParallaxReveal from '@/components/ParallaxReveal';
@@ -11,17 +12,32 @@ import { useI18n } from '@/lib/i18n';
 import { phoneHref } from '@/lib/content';
 import { useSiteData } from '@/lib/useSiteData';
 
-// Section headings start widely spaced and tighten as they enter, like the reference site.
+// Section headings reveal word by word. Only opacity and transform are animated (no layout work), and
+// the reveal replays each time the heading scrolls back into view.
+const wordVariants = {
+  hidden: { opacity: 0, y: '0.6em' },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const } },
+};
+
 function AnimatedTitle({ children }: { children: string }) {
+  const ref = useRef<HTMLHeadingElement>(null);
+  const inView = useInView(ref, { amount: 0.6 });
   return (
     <motion.h2
+      ref={ref}
       className="section-title"
-      initial={{ letterSpacing: '0.5em', opacity: 0 }}
-      whileInView={{ letterSpacing: '0.18em', opacity: 1 }}
-      viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+      initial="hidden"
+      animate={inView ? 'visible' : 'hidden'}
+      variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}
     >
-      {children}
+      {children.split(' ').map((word, index) => (
+        <Fragment key={`${index}-${word}`}>
+          {index > 0 && ' '}
+          <motion.span className="section-title-word" variants={wordVariants}>
+            {word}
+          </motion.span>
+        </Fragment>
+      ))}
     </motion.h2>
   );
 }
@@ -96,6 +112,12 @@ export default function HomePage() {
         </Reveal>
         <ParallaxReveal className="scene-banner">
           <PhotoSlider slides={introSlides} />
+        </ParallaxReveal>
+
+        <ParallaxReveal className="scene-banner overview-banner">
+          {/* Uploaded to Firebase Storage as overview.<ext> this replaces the bundled fallback. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img className="scene-photo overview-photo" src={images.overview ?? '/images/overview.jpg'} alt="NUVIO" />
         </ParallaxReveal>
 
         <div className="grid-3">

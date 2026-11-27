@@ -6,8 +6,8 @@ import { getDownloadURL, listAll, ref } from 'firebase/storage';
 import { getFirebase } from './firebase';
 import { DEFAULT_CONTENT, mergeContent, type SiteContent } from './content';
 
-// Storage folder `site-images/`. Upload a file named hero.<ext> or intro.<ext> to replace that image.
-export const IMAGE_SLOTS = ['hero', 'intro'] as const;
+// Storage folder `site-images/`. Upload a file named hero.<ext>, intro.<ext> or overview.<ext> to replace that image.
+export const IMAGE_SLOTS = ['hero', 'intro', 'overview'] as const;
 export type ImageSlot = (typeof IMAGE_SLOTS)[number];
 export type SiteImages = Partial<Record<ImageSlot, string>>;
 
