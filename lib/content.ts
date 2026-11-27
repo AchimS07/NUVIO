@@ -26,22 +26,22 @@ export const DEFAULT_CONTENT: SiteContent = {
     {
       id: 'low',
       label: {
-        ro: 'Sezon mic (noiembrie – mai)',
-        en: 'Low season (Nov – May)',
-        hu: 'Alacsony szezon (november – május)',
+        ro: 'Sezon mic (aprilie – octombrie)',
+        en: 'Low season (Apr – Oct)',
+        hu: 'Alacsony szezon (április – október)',
       },
-      weekday: 300,
-      weekend: 360,
+      weekday: 1100,
+      weekend: 1500,
     },
     {
       id: 'high',
       label: {
-        ro: 'Sezon înalt (iunie – octombrie)',
-        en: 'High season (Jun – Oct)',
-        hu: 'Főszezon (június – október)',
+        ro: 'Sezon înalt (noiembrie – martie)',
+        en: 'High season (Nov – Mar)',
+        hu: 'Főszezon (november – március)',
       },
-      weekday: 450,
-      weekend: 520,
+      weekday: 1100,
+      weekend: 1700,
     },
   ],
 };
