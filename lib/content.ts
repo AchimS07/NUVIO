@@ -26,9 +26,9 @@ export const DEFAULT_CONTENT: SiteContent = {
     {
       id: 'low',
       label: {
-        ro: 'Sezon mic (aprilie – octombrie)',
-        en: 'Low season (Apr – Oct)',
-        hu: 'Alacsony szezon (április – október)',
+        ro: 'Perioada (aprilie – octombrie)',
+        en: 'Period (April – October)',
+        hu: 'Időszak (április – október)',
       },
       weekday: 1100,
       weekend: 1500,
@@ -36,9 +36,9 @@ export const DEFAULT_CONTENT: SiteContent = {
     {
       id: 'high',
       label: {
-        ro: 'Sezon înalt (noiembrie – martie)',
-        en: 'High season (Nov – Mar)',
-        hu: 'Főszezon (november – március)',
+        ro: 'Perioada (noiembrie – martie)',
+        en: 'Period (November – March)',
+        hu: 'Időszak (november – március)',
       },
       weekday: 1100,
       weekend: 1700,
