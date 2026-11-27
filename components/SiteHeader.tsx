@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { LOCALE_LABELS, LOCALES, useI18n } from '@/lib/i18n';
 
@@ -22,8 +22,22 @@ export default function SiteHeader() {
   const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname.startsWith(href));
   const close = () => setOpen(false);
 
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpen(false);
+    };
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', onKey);
+    };
+  }, [open]);
+
   return (
-    <header className="site-header">
+    <>
+    <header className={open ? 'site-header menu-open' : 'site-header'}>
       <div className="container header-inner">
         <Link href="/" className="brand" onClick={close}>
           NUVIO
@@ -71,38 +85,43 @@ export default function SiteHeader() {
         </div>
       </div>
 
-      <AnimatePresence initial={false}>
+    </header>
+
+      <AnimatePresence>
         {open && (
-          <motion.nav
+          <motion.div
+            key="menu"
             id="mobile-menu"
-            className="mobile-nav"
-            aria-label="Mobile"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="menu-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, ease: 'easeInOut' }}
           >
-            <ul>
-              {NAV.map((item, index) => (
-                <motion.li
-                  key={item.href}
-                  initial={{ x: -16, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: 0.04 * index, duration: 0.25 }}
-                >
-                  <Link
-                    href={item.href}
-                    className={isActive(item.href) ? 'mobile-link active' : 'mobile-link'}
-                    onClick={close}
+            <nav aria-label="Mobile">
+              <ul>
+                {NAV.map((item, index) => (
+                  <motion.li
+                    key={item.href}
+                    initial={{ opacity: 0, y: 28 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ delay: 0.12 + index * 0.07, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                   >
-                    {t.nav[item.key]}
-                  </Link>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.nav>
+                    <Link
+                      href={item.href}
+                      className={isActive(item.href) ? 'mobile-link active' : 'mobile-link'}
+                      onClick={close}
+                    >
+                      {t.nav[item.key]}
+                    </Link>
+                  </motion.li>
+                ))}
+              </ul>
+            </nav>
+          </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }
