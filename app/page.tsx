@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import CabinIllustration from '@/components/CabinIllustration';
 import Reveal from '@/components/Reveal';
 import { useI18n } from '@/lib/i18n';
 import { phoneHref } from '@/lib/content';
@@ -15,7 +16,8 @@ export default function HomePage() {
     <>
       <section className="hero">
         <div className="hero-bg" aria-hidden="true" />
-        <div className="container hero-content">
+        <div className="container hero-inner">
+          <div className="hero-text">
           <motion.p
             className="eyebrow"
             initial={{ opacity: 0, y: 12 }}
@@ -48,6 +50,15 @@ export default function HomePage() {
               {t.home.seeTariffs}
             </Link>
           </motion.div>
+          </div>
+          <motion.div
+            className="hero-visual"
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2, delay: 0.3 }}
+          >
+            <CabinIllustration variant="dusk" />
+          </motion.div>
         </div>
         <div className="scroll-hint" aria-hidden="true" />
       </section>
@@ -56,6 +67,9 @@ export default function HomePage() {
         <Reveal>
           <h2>{t.home.introTitle}</h2>
           <p className="lead">{t.home.introBody}</p>
+        </Reveal>
+        <Reveal className="scene-banner">
+          <CabinIllustration variant="day" />
         </Reveal>
         <div className="grid-3">
           {t.home.highlights.map((item, index) => (
