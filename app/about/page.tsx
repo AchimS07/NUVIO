@@ -11,7 +11,6 @@ export default function AboutPage() {
       <header className="page-header">
         <Reveal>
           <h1>{t.about.title}</h1>
-          <p className="lead">{t.about.subtitle}</p>
         </Reveal>
       </header>
       <section className="section" style={{ paddingTop: 16 }}>

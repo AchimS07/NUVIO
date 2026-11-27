@@ -54,6 +54,12 @@ export function phoneHref(phone: string): string {
   return `tel:${phone.replace(/[^+\d]/g, '')}`;
 }
 
+// wa.me needs digits with the country code, so a national number starting with 0 gets 40 (Romania).
+export function whatsappHref(phone: string): string {
+  const digits = phone.replace(/\D/g, '').replace(/^0/, '40');
+  return `https://wa.me/${digits}`;
+}
+
 // Merges a Firestore document over the defaults, ignoring fields with the wrong type.
 export function mergeContent(data: Record<string, unknown>): SiteContent {
   const seasons = Array.isArray(data.seasons) ? (data.seasons as Season[]) : DEFAULT_CONTENT.seasons;
