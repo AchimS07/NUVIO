@@ -415,10 +415,6 @@ main {
   object-fit: cover;
 }
 
-.overview-photo {
-  aspect-ratio: 16 / 9;
-}
-
 .scene-banner {
   max-width: 720px;
   margin: 0 auto;
