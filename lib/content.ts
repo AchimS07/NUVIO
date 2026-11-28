@@ -16,6 +16,12 @@ export type SiteContent = {
   // Latitude,longitude used for the map embed and directions link.
   mapQuery: string;
   seasons: Season[];
+  // Legal details used by the Terms and Cookie policy pages.
+  businessName: string;
+  businessCui: string;
+  businessAddress: string;
+  checkIn: string;
+  checkOut: string;
 };
 
 // Placeholder values: edit in Firestore (site/content) once the real data is known.
@@ -24,6 +30,11 @@ export const DEFAULT_CONTENT: SiteContent = {
   email: 'sebastian.achim@icloud.com',
   address: 'Sat Măguri, județul Cluj',
   mapQuery: '46.628171,23.127336',
+  businessName: '[Denumirea firmei]',
+  businessCui: '[CUI]',
+  businessAddress: '[Adresa sediului social]',
+  checkIn: '14:00',
+  checkOut: '11:00',
   seasons: [
     {
       id: 'low',
@@ -70,6 +81,12 @@ export function mergeContent(data: Record<string, unknown>): SiteContent {
     email: typeof data.email === 'string' ? data.email : DEFAULT_CONTENT.email,
     address: typeof data.address === 'string' ? data.address : DEFAULT_CONTENT.address,
     mapQuery: typeof data.mapQuery === 'string' ? data.mapQuery : DEFAULT_CONTENT.mapQuery,
+    businessName: typeof data.businessName === 'string' ? data.businessName : DEFAULT_CONTENT.businessName,
+    businessCui: typeof data.businessCui === 'string' ? data.businessCui : DEFAULT_CONTENT.businessCui,
+    businessAddress:
+      typeof data.businessAddress === 'string' ? data.businessAddress : DEFAULT_CONTENT.businessAddress,
+    checkIn: typeof data.checkIn === 'string' ? data.checkIn : DEFAULT_CONTENT.checkIn,
+    checkOut: typeof data.checkOut === 'string' ? data.checkOut : DEFAULT_CONTENT.checkOut,
     seasons,
   };
 }

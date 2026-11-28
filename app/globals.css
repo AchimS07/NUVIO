@@ -663,6 +663,32 @@ main {
   color: var(--muted);
 }
 
+.legal-doc {
+  max-width: 720px;
+  padding-bottom: 64px;
+}
+
+.legal-section {
+  margin-top: 28px;
+}
+
+.legal-section h2 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.legal-section p,
+.legal-doc .lead,
+.legal-closing {
+  line-height: 1.7;
+  margin: 0 0 10px;
+}
+
+.legal-closing {
+  margin-top: 32px;
+  font-style: italic;
+}
+
 /* Tariffs */
 .tariff-cards {
   display: grid;

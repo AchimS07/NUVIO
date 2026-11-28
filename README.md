@@ -15,7 +15,7 @@ Fără variabilele Firebase, site-ul folosește conținutul implicit (placeholde
 
 ## Conținut (Firebase)
 
-- Document Firestore `site/content` cu câmpurile: `phone`, `address`, `mapQuery` (`lat,lng`), `seasons` (listă de `{ id, label: { ro, en, hu }, weekday, weekend }`).
+- Document Firestore `site/content` cu câmpurile: `phone`, `address`, `mapQuery` (`lat,lng`), `businessName`, `businessCui`, `businessAddress` (datele firmei pentru Termeni), `checkIn`, `checkOut` (ex. `14:00`, `11:00`), `seasons` (listă de `{ id, label: { ro, en, hu }, weekday, weekend }`).
 - Galeria de fotografii: Firebase Storage, folderul `cabin-photos/` (orice număr de fișiere).
 - Imaginile de pe pagina principală: Firebase Storage, folderul `site-images/`. Încarcă un fișier numit `hero.jpg` (sau `.png`/`.webp`) pentru imaginea din secțiunea de sus. `intro.jpg` este prima imagine din caruselul de sub introducere, urmată de fotografiile din `cabin-photos/`. Dacă lipsesc, se afișează imaginile implicite. Pentru a schimba o imagine, șterge fișierul vechi și încarcă noul fișier cu același nume (`hero` sau `intro`).
 - Textele statice (pagini, facilități, meniu) sunt în `lib/i18n.tsx`.

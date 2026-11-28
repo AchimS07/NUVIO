@@ -84,10 +84,10 @@ export default function SiteFooter() {
         </nav>
 
         <div className="footer-badges">
-          <a className="anpc-badge" href="https://anpc.ro/" target="_blank" rel="noopener noreferrer">
+          <a className="anpc-badge" href="https://www.anpc.ro" target="_blank" rel="noopener noreferrer">
             ANPC
           </a>
-          <a className="footer-link" href="https://anpc.ro/" target="_blank" rel="noopener noreferrer">
+          <a className="footer-link" href="https://www.anpc.ro" target="_blank" rel="noopener noreferrer">
             {t.footer.dispute}
           </a>
           <ul className="payment-badges" aria-label={t.footer.payment}>
