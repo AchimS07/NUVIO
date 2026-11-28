@@ -1,7 +1,8 @@
 'use client';
 
-import LegalPlaceholder from '@/components/LegalPlaceholder';
+import LegalDocumentPage from '@/components/LegalDocumentPage';
+import { COOKIES } from '@/lib/legalCookies';
 
 export default function CookiesPage() {
-  return <LegalPlaceholder titleKey="cookies" />;
+  return <LegalDocumentPage titleKey="cookies" docs={COOKIES} />;
 }

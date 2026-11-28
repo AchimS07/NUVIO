@@ -108,9 +108,14 @@ const ro = {
     dispute: 'Soluționarea alternativă a litigiilor',
     comingSoon: 'Textul acestei pagini va fi adăugat în curând.',
   },
+  cookieBanner: {
+    text: 'Folosim cookie-uri esențiale și reținem limba aleasă. Harta Google din pagina Contact poate plasa propriile cookie-uri.',
+    learnMore: 'Află mai multe',
+    accept: 'Am înțeles',
+  },
 };
 
-type Dict = typeof ro;
+export type Dict = typeof ro;
 
 const en: Dict = {
   common: {
@@ -203,6 +208,11 @@ const en: Dict = {
     payment: 'How to pay',
     dispute: 'Alternative dispute resolution',
     comingSoon: 'The text of this page will be added soon.',
+  },
+  cookieBanner: {
+    text: 'We use essential cookies and remember your chosen language. The Google Maps embed on the Contact page may set its own cookies.',
+    learnMore: 'Learn more',
+    accept: 'Got it',
   },
 };
 
@@ -297,6 +307,11 @@ const hu: Dict = {
     payment: 'Fizetési módok',
     dispute: 'Alternatív vitarendezés',
     comingSoon: 'Az oldal szövege hamarosan elkészül.',
+  },
+  cookieBanner: {
+    text: 'Elengedhetetlen sütiket használunk, és megjegyezzük a kiválasztott nyelvet. A Kapcsolat oldal Google Térképe saját sütiket helyezhet el.',
+    learnMore: 'Tudj meg többet',
+    accept: 'Rendben',
   },
 };
 

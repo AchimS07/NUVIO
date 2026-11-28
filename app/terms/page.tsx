@@ -1,7 +1,10 @@
 'use client';
 
-import LegalPlaceholder from '@/components/LegalPlaceholder';
+'use client';
+
+import LegalDocumentPage from '@/components/LegalDocumentPage';
+import { TERMS } from '@/lib/legalTerms';
 
 export default function TermsPage() {
-  return <LegalPlaceholder titleKey="terms" />;
+  return <LegalDocumentPage titleKey="terms" docs={TERMS} />;
 }

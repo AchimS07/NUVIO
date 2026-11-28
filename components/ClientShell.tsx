@@ -7,6 +7,7 @@ import SiteHeader from './SiteHeader';
 import SiteFooter from './SiteFooter';
 import PageTransition from './PageTransition';
 import WhatsAppButton from './WhatsAppButton';
+import CookieBanner from './CookieBanner';
 
 // Client-side wrapper so the root layout can stay a server component.
 export default function ClientShell({ children }: { children: ReactNode }) {
@@ -17,6 +18,7 @@ export default function ClientShell({ children }: { children: ReactNode }) {
         <PageTransition>{children}</PageTransition>
         <SiteFooter />
         <WhatsAppButton />
+        <CookieBanner />
       </MotionConfig>
     </I18nProvider>
   );
